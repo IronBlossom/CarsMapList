@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt' // For incremental annotation processing.
 }
 
 android {
@@ -40,4 +41,14 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // Retrofit with Moshi converter and Moshi core
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0' // Retrofit. de facto std,  mentioned in google codelab, legend Jake Wharton
+    implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'        // kotlin friendly, leaves less mem footprint ~120KB and half method count in apk compared to gson.
+
+    // coil image loader
+    implementation "io.coil-kt:coil:1.3.2" // kotlin friendly, less method count than both glide and Picasso.
+
+    // Google Play Service for google maps
+    implementation 'com.google.android.gms:play-services-maps:18.0.0'
 }
