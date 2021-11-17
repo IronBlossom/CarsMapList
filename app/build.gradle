@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt' // For incremental annotation processing.
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' // for hiding the api key, API keys are still recoverable by decompiling an APK
 }
 
 android {
