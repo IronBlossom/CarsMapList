@@ -9,7 +9,10 @@ import ishtiaq.codingchallenge.carsmaplist.model.Car
 @Dao
 interface CarDao {
     @Query("select * from Car")
-    fun getCars(): LiveData<List<Car>>
+    fun getCars(): LiveData<List<Car>> // LiveData doesn't support suspend yet.
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(cars: List<Car>)
 }
 
 @Database(entities = [Car::class], version = 1)
