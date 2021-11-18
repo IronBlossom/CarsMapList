@@ -3,6 +3,7 @@ package ishtiaq.codingchallenge.carsmaplist.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
+import java.io.Serializable
 
 @Entity
 data class Car(
@@ -23,4 +24,4 @@ data class Car(
     @Json(name = "longitude") val longitude: Double,
     @Json(name = "innerCleanliness") val cleanliness: String,
     @Json(name = "carImageUrl") val carImage: String,
-)
+) : Serializable
