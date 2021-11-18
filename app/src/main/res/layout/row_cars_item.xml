@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="car"
+            type="ishtiaq.codingchallenge.carsmaplist.model.Car" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCarName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:background="@color/main_orange"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="4dp"
+            android:text="@{car.carName}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvModelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCarName"
+            android:layout_marginLeft="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@{car.modelName}"
+            android:textColor="@color/matte_black" />
+
+        <TextView
+            android:id="@+id/tvFuelLevel"
+            android:layout_below="@id/tvModelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@{Double.toString(car.fuelLevel)}" />
+
+        <ImageView
+            android:id="@+id/ivCarImage"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_16dp"
+            android:layout_marginRight="@dimen/_16dp"
+            app:imageUrl="@{car.carImage}"
+            app:srcCompat="@drawable/ic_twotone_directions_car_24"
+            tools:ignore="ImageContrastCheck" />
+
+    </RelativeLayout>
+</layout>
